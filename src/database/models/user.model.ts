@@ -6,7 +6,7 @@ type UserInputtableTypes = Optional<User, 'id'>;
 type UserSequelizeModelCreator = ModelDefined<User, UserInputtableTypes>;
 export type UserSequelizeModel = Model<User, UserInputtableTypes>;
 
-const UserModel: UserSequelizeModelCreator = db.define('User', {
+const UserModel: UserSequelizeModelCreator = db.define<Model<User, UserInputtableTypes>>('User', {
   id: {
     type: DataTypes.INTEGER.UNSIGNED,
     primaryKey: true,
