@@ -29,10 +29,11 @@ async function getOrders(): Promise<ServiceResponse<OrderFormatada[]>> {
 
   const pedidosApenasComDataValues = pedidos.map((pedido) => pedido.dataValues);
   // também poderia usar pedidos.map((pedido) => pedido.toJSON());
-  const pedidosFormatado = formataPedido(pedidosApenasComDataValues);
+  const pedidosFormatados = formataPedido(pedidosApenasComDataValues);
+ 
   return {
     status: 200,
-    data: pedidosFormatado,
+    data: pedidosFormatados,
   };
 }
 export default {
